@@ -1,3 +1,5 @@
+gsap.defaults({ overwrite: 'auto' });
+ScrollTrigger.refresh();
 // ===== GSAP SETUP =====
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -90,7 +92,7 @@ function heroAnimations() {
         duration: 0.8,
         ease: 'power2.out'
     }, '-=0.5')
-    .from('.hero-cta', {
+    .from('.cta-button', {
         y: 30,
         opacity: 0,
         duration: 0.8,
