@@ -733,3 +733,23 @@ section {
 .fade-in {
     opacity: 0;
 }
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #25D366;
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.45);
+}
