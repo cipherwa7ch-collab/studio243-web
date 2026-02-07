@@ -127,7 +127,7 @@ body {
     height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    opacity: 0.4;
+    opacity: 0.8;
     filter: grayscale(20%);
 }
 
