@@ -503,285 +503,49 @@ body {
     pointer-events: none;
 }
 
-/* ===== PRICING SECTION (Efecto Jeton.com) ===== */
-.pricing {
+/* ===== PROCESO ===== */
+.process {
     padding: var(--spacing-xl) 0;
     background: var(--blanco-nube);
-    position: relative;
-    overflow: hidden;
 }
 
-.pricing-subtitle {
-    color: var(--gris-apple);
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    font-weight: 400;
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-top: var(--spacing-lg);
 }
 
-.pricing-cards-wrapper {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 0;
-}
-
-.pricing-card {
-    background: var(--blanco);
-    border-radius: 24px;
-    padding: 3rem 2.5rem;
-    margin-bottom: 2rem;
-    position: relative;
-    border: 2px solid rgba(0, 113, 227, 0.1);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-}
-
-/* Efecto de apilamiento sticky */
-.pricing-card {
-    position: sticky;
-    top: 100px;
-}
-
-.pricing-card[data-index="0"] {
-    z-index: 4;
-}
-
-.pricing-card[data-index="1"] {
-    z-index: 3;
-    margin-top: -1rem;
-}
-
-.pricing-card[data-index="2"] {
-    z-index: 2;
-    margin-top: -1rem;
-}
-
-.pricing-card[data-index="3"] {
-    z-index: 1;
-    margin-top: -1rem;
-}
-
-/* Card destacada (Popular) */
-.pricing-card.featured {
-    border-color: var(--azul-tech);
-    box-shadow: 0 8px 40px rgba(0, 113, 227, 0.2);
-    transform: scale(1.02);
-}
-
-.pricing-card.featured::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 24px;
-    padding: 2px;
-    background: linear-gradient(135deg, var(--azul-tech), var(--azul-hover));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-}
-
-/* Badge superior */
-.pricing-badge {
-    display: inline-block;
-    padding: 0.5rem 1.2rem;
-    background: var(--blanco-nube);
-    color: var(--gris-oscuro);
-    border-radius: 100px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.pricing-badge.popular {
-    background: linear-gradient(135deg, var(--azul-tech), var(--azul-hover));
-    color: var(--blanco);
-    border: none;
-    box-shadow: 0 4px 15px rgba(0, 113, 227, 0.3);
-}
-
-/* Header de la tarjeta */
-.pricing-header h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--gris-oscuro);
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.5px;
-}
-
-.pricing-tagline {
-    color: var(--gris-apple);
-    font-size: 1.05rem;
-    line-height: 1.5;
-    margin-bottom: 2rem;
-}
-
-/* Precio */
-.pricing-price {
-    display: flex;
-    align-items: baseline;
-    gap: 0.3rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
-.price-from {
-    font-size: 0.9rem;
-    color: var(--gris-apple);
-    margin-right: 0.3rem;
-}
-
-.currency {
-    font-size: 1.5rem;
-    color: var(--azul-tech);
-    font-weight: 600;
-}
-
-.amount {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--gris-oscuro);
-    line-height: 1;
-    letter-spacing: -2px;
-}
-
-.range {
-    font-size: 1.5rem;
-    color: var(--gris-apple);
-    font-weight: 500;
-}
-
-.period {
-    font-size: 1rem;
-    color: var(--gris-apple);
-    font-weight: 400;
-}
-
-/* Features list */
-.pricing-features {
-    list-style: none;
-    margin-bottom: 2rem;
-}
-
-.pricing-features li {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 0.75rem 0;
-    color: var(--gris-oscuro);
-    font-size: 1rem;
-    line-height: 1.6;
-    border-bottom: 1px solid var(--blanco-nube);
-}
-
-.pricing-features li:last-child {
-    border-bottom: none;
-}
-
-.pricing-features li svg {
-    flex-shrink: 0;
-    margin-top: 0.2rem;
-    color: var(--azul-tech);
-}
-
-/* CTA Button */
-.pricing-cta {
-    display: block;
-    width: 100%;
-    padding: 1.1rem 2rem;
-    background: var(--azul-tech);
-    color: var(--blanco);
+.process-step {
     text-align: center;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 1.05rem;
+    transition: all 0.4s ease;
+}
+
+.step-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--azul-tech);
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 113, 227, 0.3);
 }
 
-.pricing-cta:hover {
-    background: var(--azul-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(0, 113, 227, 0.4);
+.process-step:hover .step-icon {
+    transform: scale(1.1) rotate(5deg);
 }
 
-.pricing-card.featured .pricing-cta {
-    background: linear-gradient(135deg, var(--azul-tech), var(--azul-hover));
-}
-
-/* Tarjeta de mantenimiento con estilo diferente */
-.pricing-card.maintenance {
-    background: linear-gradient(135deg, var(--gris-oscuro) 0%, #2D2D2F 100%);
-    border-color: var(--gris-oscuro);
-}
-
-.pricing-card.maintenance .pricing-header h3,
-.pricing-card.maintenance .amount {
-    color: var(--blanco);
-}
-
-.pricing-card.maintenance .pricing-tagline,
-.pricing-card.maintenance .range,
-.pricing-card.maintenance .period {
-    color: var(--gris-apple);
-}
-
-.pricing-card.maintenance .pricing-features li {
-    color: var(--blanco-nube);
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-}
-
-.pricing-card.maintenance .pricing-cta {
-    background: var(--blanco);
+.process-step h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
     color: var(--gris-oscuro);
 }
 
-.pricing-card.maintenance .pricing-cta:hover {
-    background: var(--blanco-nube);
-    color: var(--azul-tech);
-}
-
-/* Animaciones hover para las cards */
-.pricing-card:hover {
-    transform: translateY(-5px) scale(1.01);
-    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.12);
-}
-
-.pricing-card.featured:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 15px 60px rgba(0, 113, 227, 0.3);
-}
-
-/* Responsive para pricing */
-@media (max-width: 768px) {
-    .pricing-card {
-        position: relative;
-        top: auto !important;
-        margin-bottom: 1.5rem;
-        margin-top: 0 !important;
-    }
-    
-    .pricing-card[data-index="1"],
-    .pricing-card[data-index="2"],
-    .pricing-card[data-index="3"] {
-        margin-top: 0 !important;
-    }
-    
-    .pricing-card.featured {
-        transform: scale(1);
-    }
-    
-    .pricing-price {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-    
-    .amount {
-        font-size: 2.5rem;
-    }
+.process-step p {
+    color: var(--gris-apple);
+    line-height: 1.7;
 }
 
 /* ===== PORTFOLIO ===== */

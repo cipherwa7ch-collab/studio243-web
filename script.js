@@ -30,7 +30,7 @@ function initAnimations() {
     heroAnimations();
     navbarAnimations();
     servicesAnimations();
-    pricingAnimations();
+    processAnimations();
     portfolioAnimations();
     smoothScrolling();
     cursorAnimations();
@@ -243,155 +243,37 @@ function servicesAnimations() {
     });
 }
 
-// ===== PRICING ANIMATIONS (Efecto Jeton.com) =====
-function pricingAnimations() {
-    const pricingCards = gsap.utils.toArray('.pricing-card');
+// ===== PROCESS ANIMATIONS =====
+function processAnimations() {
+    const processSteps = gsap.utils.toArray('.process-step');
     
-    pricingCards.forEach((card, index) => {
-        // Animación de entrada inicial
-        gsap.from(card, {
+    processSteps.forEach((step, index) => {
+        gsap.from(step, {
             scrollTrigger: {
-                trigger: card,
-                start: 'top 85%',
+                trigger: step,
+                start: 'top 75%',
                 toggleActions: 'play none none reverse'
             },
-            y: 60,
+            y: 80,
             opacity: 0,
-            scale: 0.95,
-            duration: 0.6,
-            delay: index * 0.1,
-            ease: 'power2.out'
+            scale: 0.8,
+            duration: 0.8,
+            delay: index * 0.15,
+            ease: 'power3.out'
         });
         
-        // Efecto de apilamiento al hacer scroll
-        ScrollTrigger.create({
-            trigger: card,
-            start: 'top 100px',
-            end: 'bottom 100px',
-            onEnter: () => {
-                gsap.to(card, {
-                    scale: 1,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            },
-            onLeave: () => {
-                gsap.to(card, {
-                    scale: 0.95,
-                    y: -20,
-                    duration: 0.3,
-                    ease: 'power2.inOut'
-                });
-            },
-            onEnterBack: () => {
-                gsap.to(card, {
-                    scale: 1,
-                    y: 0,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            },
-            onLeaveBack: () => {
-                gsap.to(card, {
-                    scale: 0.95,
-                    duration: 0.3,
-                    ease: 'power2.inOut'
-                });
-            }
-        });
-        
-        // Hover effect mejorado
-        card.addEventListener('mouseenter', () => {
-            gsap.to(card, {
-                y: -10,
-                duration: 0.3,
-                ease: 'power2.out'
-            });
-            
-            // Animar el badge
-            const badge = card.querySelector('.pricing-badge');
-            if (badge) {
-                gsap.to(badge, {
-                    scale: 1.05,
-                    duration: 0.3,
-                    ease: 'back.out(1.7)'
-                });
-            }
-            
-            // Animar los checkmarks
-            const checks = card.querySelectorAll('.pricing-features svg');
-            checks.forEach((check, i) => {
-                gsap.to(check, {
-                    scale: 1.2,
-                    rotation: 5,
-                    duration: 0.3,
-                    delay: i * 0.05,
-                    ease: 'back.out(1.7)'
-                });
-            });
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            gsap.to(card, {
-                y: 0,
-                duration: 0.3,
-                ease: 'power2.out'
-            });
-            
-            const badge = card.querySelector('.pricing-badge');
-            if (badge) {
-                gsap.to(badge, {
-                    scale: 1,
-                    duration: 0.3
-                });
-            }
-            
-            const checks = card.querySelectorAll('.pricing-features svg');
-            checks.forEach(check => {
-                gsap.to(check, {
-                    scale: 1,
-                    rotation: 0,
-                    duration: 0.3
-                });
-            });
-        });
-    });
-    
-    // Animar los precios con contador
-    const amounts = document.querySelectorAll('.pricing-price .amount');
-    amounts.forEach(amount => {
-        ScrollTrigger.create({
-            trigger: amount,
-            start: 'top 80%',
-            onEnter: () => {
-                const text = amount.textContent;
-                const num = parseInt(text.replace(/[^0-9]/g, ''));
-                
-                gsap.from(amount, {
-                    textContent: 0,
-                    duration: 1.5,
-                    ease: 'power2.out',
-                    snap: { textContent: 1 },
-                    onUpdate: function() {
-                        amount.textContent = Math.round(this.targets()[0].textContent) + 'K';
-                    }
-                });
-            },
-            once: true
-        });
-    });
-    
-    // Efecto parallax en las cards
-    pricingCards.forEach((card, index) => {
-        gsap.to(card, {
+        // Animación del icono
+        const icon = step.querySelector('.step-icon');
+        gsap.from(icon, {
             scrollTrigger: {
-                trigger: '.pricing',
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: 1
+                trigger: step,
+                start: 'top 75%'
             },
-            y: index * -30,
-            ease: 'none'
+            rotation: 360,
+            scale: 0,
+            duration: 1,
+            delay: index * 0.15 + 0.3,
+            ease: 'elastic.out(1, 0.5)'
         });
     });
 }
