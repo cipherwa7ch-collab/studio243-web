@@ -48,12 +48,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Parallax effect on hero
 const hero = document.querySelector('.hero');
+const heroVideo = document.querySelector('.hero-video');
+
 if (hero) {
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         if (scrolled < window.innerHeight) {
+            // Parallax en el contenido
             hero.style.transform = `translateY(${scrolled * 0.4}px)`;
             hero.style.opacity = 1 - (scrolled / 1200);
+            
+            // Parallax más lento en el video para efecto de profundidad
+            if (heroVideo) {
+                heroVideo.style.transform = `translate(-50%, -50%) scale(1.1) translateY(${scrolled * 0.2}px)`;
+            }
         }
     });
 }
