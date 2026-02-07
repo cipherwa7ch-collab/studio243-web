@@ -3,451 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio 243 | Agencia Digital para Pymes</title>
+    <title>Studio 243</title>
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- GSAP y Plugins -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="preloader-content">
-            <div class="loader-logo">Studio 243</div>
-            <div class="loader-bar">
-                <div class="loader-progress"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="nav">
         <div class="container">
-            <div class="nav-content">
-                <div class="logo">Studio 243</div>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#precios">Precios</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contacto" class="btn-contact">Contacto</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+            <a href="#" class="logo">Studio 243</a>
+            <a href="#contact" class="nav-link">Contacto</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-bg-circles">
-            <div class="circle circle-1"></div>
-            <div class="circle circle-2"></div>
-            <div class="circle circle-3"></div>
-        </div>
+    <section class="hero" data-section="1">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="line">Diseñamos</span>
-                    <span class="line gradient-text">experiencias</span>
-                    <span class="line">digitales únicas</span>
-                </h1>
-                <p class="hero-subtitle">Transformamos tu visión en una presencia digital que impulsa tu negocio</p>
-                <div class="hero-cta">
-                    <a href="#contacto" class="cta-button cta-primary">
-                        <span>Comenzar proyecto</span>
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                    <a href="#servicios" class="cta-button cta-secondary">
-                        <span>Ver servicios</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
+            <h1 class="hero-title">
+                Diseño. Web.<br>
+                Automatización.
+            </h1>
+            <p class="hero-subtitle">
+                Presencia digital profesional para Pymes<br>
+                que quieren destacar.
+            </p>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="servicios" class="services">
+    <section class="services" data-section="2">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label">Lo que hacemos</span>
-                <h2 class="section-title">Servicios especializados para Pymes</h2>
-            </div>
+            <h2 class="section-title">Planes</h2>
             
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                            <rect x="10" y="10" width="40" height="40" rx="8" stroke="currentColor" stroke-width="2"/>
-                            <path d="M20 25h20M20 30h15M20 35h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
+            <div class="service-item">
+                <div class="service-header">
+                    <div>
+                        <h3 class="service-name">Pack Despegue 243</h3>
+                        <p class="service-desc">Presencia profesional rápida para servicios.</p>
                     </div>
-                    <div class="service-number">01</div>
-                    <h3>Desarrollo Web</h3>
-                    <p>Sitios web modernos, rápidos y optimizados que convierten visitantes en clientes.</p>
-                    <ul class="service-features">
-                        <li>Diseño responsive</li>
-                        <li>SEO optimizado</li>
-                        <li>Velocidad superior</li>
-                    </ul>
-                    <div class="service-hover-effect"></div>
+                    <div class="service-price">$120k – $150k</div>
                 </div>
+                <ul class="service-features">
+                    <li>Web de una sola página (Landing)</li>
+                    <li>Sección de servicios</li>
+                    <li>Galería de fotos</li>
+                    <li>Botón WhatsApp</li>
+                    <li>Integración Google Maps</li>
+                </ul>
+            </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                            <circle cx="30" cy="30" r="20" stroke="currentColor" stroke-width="2"/>
-                            <path d="M30 20v20M20 30h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
+            <div class="service-item featured">
+                <div class="service-header">
+                    <div>
+                        <h3 class="service-name">Catálogo Pro <span class="badge">⚡</span></h3>
+                        <p class="service-desc">Tu tienda online sin comisiones por venta.</p>
                     </div>
-                    <div class="service-number">02</div>
-                    <h3>Diseño Gráfico</h3>
-                    <p>Identidad visual coherente que refleja la esencia de tu marca.</p>
-                    <ul class="service-features">
-                        <li>Branding completo</li>
-                        <li>Material digital</li>
-                        <li>Redes sociales</li>
-                    </ul>
-                    <div class="service-hover-effect"></div>
+                    <div class="service-price">$250k – $350k</div>
                 </div>
+                <ul class="service-features">
+                    <li>Web multi-página</li>
+                    <li>Catálogo hasta 50 productos</li>
+                    <li>Carrito de pedidos a WhatsApp</li>
+                    <li>Panel autogestionable</li>
+                    <li>Optimización de velocidad</li>
+                </ul>
+            </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                            <path d="M15 30l10 10 20-20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="30" cy="30" r="20" stroke="currentColor" stroke-width="2"/>
-                        </svg>
+            <div class="service-item">
+                <div class="service-header">
+                    <div>
+                        <h3 class="service-name">Dominio Total</h3>
+                        <p class="service-desc">Evolución digital completa de la marca.</p>
                     </div>
-                    <div class="service-number">03</div>
-                    <h3>Estrategia Digital</h3>
-                    <p>Planificación integral para maximizar tu presencia online.</p>
-                    <ul class="service-features">
-                        <li>Consultoría digital</li>
-                        <li>Análisis de mercado</li>
-                        <li>Optimización continua</li>
-                    </ul>
-                    <div class="service-hover-effect"></div>
+                    <div class="service-price">Desde $450k</div>
                 </div>
+                <ul class="service-features">
+                    <li>Todo lo anterior</li>
+                    <li>Blog de contenidos</li>
+                    <li>Hasta 3 correos corporativos</li>
+                    <li>SEO avanzado (Google)</li>
+                    <li>Formulario de contacto pro</li>
+                </ul>
+            </div>
+
+            <div class="service-item maintenance">
+                <div class="service-header">
+                    <div>
+                        <h3 class="service-name">Mantenimiento Rayo</h3>
+                        <p class="service-desc">Respaldo y estabilidad anual.</p>
+                    </div>
+                    <div class="service-price">$60k – $80k/año</div>
+                </div>
+                <ul class="service-features">
+                    <li>Hosting de alto rendimiento</li>
+                    <li>Registro de dominio (.cl/.com)</li>
+                    <li>Certificado SSL</li>
+                    <li>Soporte técnico básico</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="precios">
+    <section class="contact" data-section="3" id="contact">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label">Planes y Precios</span>
-                <h2 class="section-title">Soluciones para cada etapa</h2>
-                <p class="pricing-subtitle">Inversión transparente, resultados garantizados</p>
-            </div>
-
-            <div class="pricing-cards-wrapper">
-                <div class="pricing-card" data-index="0">
-                    <div class="pricing-badge">⚡ Inicio Rápido</div>
-                    <div class="pricing-header">
-                        <h3>Pack Despegue 243</h3>
-                        <p class="pricing-tagline">Presencia profesional rápida para servicios</p>
-                    </div>
-                    
-                    <div class="pricing-price">
-                        <span class="currency">$</span>
-                        <span class="amount">120</span>
-                        <span class="range">K - $150K</span>
-                    </div>
-                    
-                    <ul class="pricing-features">
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Web de una sola página (Landing)
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Sección de servicios
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Galería de fotos
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Botón WhatsApp integrado
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Integración Google Maps
-                        </li>
-                    </ul>
-                    
-                    <a href="#contacto" class="pricing-cta">Comenzar ahora</a>
-                </div>
-
-                <div class="pricing-card featured" data-index="1">
-                    <div class="pricing-badge popular">🔥 Más Popular</div>
-                    <div class="pricing-header">
-                        <h3>Catálogo Pro</h3>
-                        <p class="pricing-tagline">Tu tienda online sin comisiones por venta</p>
-                    </div>
-                    
-                    <div class="pricing-price">
-                        <span class="currency">$</span>
-                        <span class="amount">250</span>
-                        <span class="range">K - $350K</span>
-                    </div>
-                    
-                    <ul class="pricing-features">
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Web multi-página completa
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Catálogo hasta 50 productos
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Carrito de pedidos a WhatsApp
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Panel autogestionable
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Optimización de velocidad
-                        </li>
-                    </ul>
-                    
-                    <a href="#contacto" class="pricing-cta">Solicitar presupuesto</a>
-                </div>
-
-                <div class="pricing-card" data-index="2">
-                    <div class="pricing-badge">🚀 Premium</div>
-                    <div class="pricing-header">
-                        <h3>Dominio Total</h3>
-                        <p class="pricing-tagline">Evolución digital completa de la marca</p>
-                    </div>
-                    
-                    <div class="pricing-price">
-                        <span class="price-from">Desde</span>
-                        <span class="currency">$</span>
-                        <span class="amount">450</span>
-                        <span class="range">K</span>
-                    </div>
-                    
-                    <ul class="pricing-features">
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Todo lo anterior incluido
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Blog de contenidos SEO
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Hasta 3 correos corporativos
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            SEO avanzado en Google
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Formulario de contacto pro
-                        </li>
-                    </ul>
-                    
-                    <a href="#contacto" class="pricing-cta">Conversemos</a>
-                </div>
-
-                <div class="pricing-card maintenance" data-index="3">
-                    <div class="pricing-badge">💎 Esencial</div>
-                    <div class="pricing-header">
-                        <h3>Mantenimiento Rayo</h3>
-                        <p class="pricing-tagline">Respaldo y estabilidad anual</p>
-                    </div>
-                    
-                    <div class="pricing-price">
-                        <span class="currency">$</span>
-                        <span class="amount">60</span>
-                        <span class="range">K - $80K</span>
-                        <span class="period">/año</span>
-                    </div>
-                    
-                    <ul class="pricing-features">
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Hosting de alto rendimiento
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Registro de dominio (.cl/.com)
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Certificado SSL (Candado)
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Soporte técnico básico
-                        </li>
-                    </ul>
-                    
-                    <a href="#contacto" class="pricing-cta">Contratar</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Proyectos</span>
-                <h2 class="section-title">Casos de éxito</h2>
-            </div>
-
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">Proyecto 1</div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Próximamente</h3>
-                        <p>Tu proyecto podría ser el primero</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">Proyecto 2</div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>En desarrollo</h3>
-                        <p>Grandes cosas vienen en camino</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contacto" class="contact">
-        <div class="container">
+            <h2 class="section-title">Conversemos</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <span class="section-label">Hablemos</span>
-                    <h2 class="section-title">Comienza tu proyecto hoy</h2>
-                    <p class="contact-description">
-                        Estamos listos para transformar tu visión en realidad digital. 
-                        Conversemos sobre tu proyecto sin compromiso.
-                    </p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <strong>Email</strong>
-                            <a href="mailto:hola@studio243.com">hola@studio243.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <strong>Teléfono</strong>
-                            <a href="tel:+1234567890">+123 456 7890</a>
-                        </div>
-                    </div>
+                    <a href="mailto:hola@studio243.com" class="contact-link">hola@studio243.com</a>
+                    <a href="https://wa.me/56912345678" class="contact-link">WhatsApp</a>
                 </div>
-
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Empresa">
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Cuéntanos sobre tu proyecto" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Enviar mensaje</button>
-                </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">Studio 243</div>
-                    <p>Diseño y desarrollo web para Pymes</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Servicios</h4>
-                        <a href="#servicios">Desarrollo Web</a>
-                        <a href="#servicios">Diseño Gráfico</a>
-                        <a href="#servicios">Estrategia Digital</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Empresa</h4>
-                        <a href="#inicio">Sobre nosotros</a>
-                        <a href="#portfolio">Portfolio</a>
-                        <a href="#contacto">Contacto</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Studio 243. Todos los derechos reservados.</p>
-            </div>
+            <p>Studio 243 · 2024</p>
         </div>
     </footer>
 
