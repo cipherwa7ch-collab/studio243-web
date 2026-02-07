@@ -140,7 +140,7 @@ body {
     background: linear-gradient(
         to bottom,
         rgba(10, 10, 10, 0.7) 0%,
-        rgba(10, 10, 10, 0.85) 50%,
+        rgba(10, 10, 10, 0.90) 50%,
         rgba(10, 10, 10, 0.95) 100%
     );
     z-index: 1;
