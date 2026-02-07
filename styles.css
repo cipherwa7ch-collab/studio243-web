@@ -623,29 +623,3 @@ section.visible {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
   }
 }
-.site-header {
-  position: fixed;
-  top: 24px;
-  left: 24px;
-  z-index: 9999;
-}
-
-.logo {
-  height: 36px;
-  width: auto;
-  display: block;
-}
-.logo {
-  animation: fadeDown 0.8s ease-out forwards;
-}
-
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
