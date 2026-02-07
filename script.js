@@ -1,28 +1,7 @@
-// Observador de scroll para cambiar color de fondo
-const sections = document.querySelectorAll('[data-section]');
-const nav = document.querySelector('.nav');
-
-// Scroll spy para cambiar el fondo
-const observerOptions = {
-    threshold: 0.5,
-    rootMargin: '-100px'
-};
-
-const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const sectionNumber = entry.target.getAttribute('data-section');
-            document.body.setAttribute('data-scroll', sectionNumber);
-        }
-    });
-}, observerOptions);
-
-sections.forEach(section => {
-    sectionObserver.observe(section);
-});
-
 // Navbar scroll effect
+const nav = document.querySelector('.nav');
 let lastScroll = 0;
+
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
@@ -36,24 +15,24 @@ window.addEventListener('scroll', () => {
 });
 
 // Fade in sections on scroll
-const fadeElements = document.querySelectorAll('section');
+const sections = document.querySelectorAll('section');
 
-const fadeObserver = new IntersectionObserver((entries) => {
+const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
         }
     });
 }, {
-    threshold: 0.1,
+    threshold: 0.15,
     rootMargin: '0px 0px -100px 0px'
 });
 
-fadeElements.forEach(element => {
-    fadeObserver.observe(element);
+sections.forEach(section => {
+    sectionObserver.observe(section);
 });
 
-// Smooth scroll para enlaces
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -67,14 +46,70 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Subtle parallax on hero
+// Parallax effect on hero
 const hero = document.querySelector('.hero');
 if (hero) {
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         if (scrolled < window.innerHeight) {
-            hero.style.transform = `translateY(${scrolled * 0.15}px)`;
-            hero.style.opacity = 1 - (scrolled / 1000);
+            hero.style.transform = `translateY(${scrolled * 0.4}px)`;
+            hero.style.opacity = 1 - (scrolled / 1200);
         }
+    });
+}
+
+// Card hover effects
+const cards = document.querySelectorAll('.pricing-card');
+cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+    });
+});
+
+// Cursor trail effect (desktop only)
+if (window.innerWidth > 768) {
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    cursor.style.cssText = `
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background: #0066FF;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 10000;
+        mix-blend-mode: difference;
+        transition: transform 0.15s ease;
+    `;
+    document.body.appendChild(cursor);
+    
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX - 4 + 'px';
+        cursor.style.top = e.clientY - 4 + 'px';
+    });
+    
+    // Grow on hover
+    const interactives = document.querySelectorAll('a, button, .pricing-card');
+    interactives.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'scale(3)';
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'scale(1)';
+        });
     });
 }
